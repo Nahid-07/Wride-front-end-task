@@ -1,5 +1,6 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { HiOutlineBell, HiOutlineLogin, HiOutlineSwitchHorizontal, HiOutlineUser, HiViewGrid } from "react-icons/hi";
+import { Link, Outlet } from "react-router-dom";
 
 const Main = () => {
   return (
@@ -16,17 +17,18 @@ const Main = () => {
           <ul className="menu p-4 w-80 bg-orange-200 text-base-content">
             <h1 className="text-4xl mb-8 text-center">Logo</h1>
             <li>
-              <a>Home</a>
+              <Link><HiViewGrid/> Home</Link>
             </li>
             <li>
-              <a>Notification</a>
+              <Link><HiOutlineBell/> Notification</Link>
             </li>
             <li>
-              <a>Shorts</a>
+              <Link><HiOutlineSwitchHorizontal/> Shorts</Link>
             </li>
             <li>
-              <a>Profile</a>
+              <Link><HiOutlineUser/> Profile</Link>
             </li>
+            <button className="btn btn-ghost absolute bottom-5 text-lg"><HiOutlineLogin className="inline mr-3"/>Log Out</button>
           </ul>
         </div>
       </div>
