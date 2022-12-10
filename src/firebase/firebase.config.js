@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB-edjNS6L72gNxcaZpvhwRIh-rdNqqWAE",
-  authDomain: "wellfound-client-auth.firebaseapp.com",
-  projectId: "wellfound-client-auth",
-  storageBucket: "wellfound-client-auth.appspot.com",
-  messagingSenderId: "832895953210",
-  appId: "1:832895953210:web:6661617f98633b157f0803"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_CLIENT_AUTH,
+  storageBucket: process.env.REACT_APP_STORAGE,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGID,
+  appId: process.env.REACT_APP_APPID
 };
 
 // Initialize Firebase
