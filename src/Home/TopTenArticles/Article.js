@@ -2,7 +2,6 @@ import React from "react";
 import { HiOutlineHeart } from "react-icons/hi";
 
 const Article = ({ article }) => {
-  console.log(article);
   const { articaleImage, articleName, authorImage } = article;
   return (
     <div className="rounded-md shadow-md">

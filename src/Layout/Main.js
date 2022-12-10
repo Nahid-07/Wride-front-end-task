@@ -8,15 +8,14 @@ import {
 } from "react-icons/hi";
 import { Link, Outlet } from "react-router-dom";
 import { AuthContext } from "../Context/Context";
+import logo from '../images/logo3-removebg-preview.png'
 
 const Main = () => {
   const { logOut } = useContext(AuthContext);
   const handleLogout = () => {
     logOut()
-      .then(() => {
-        console.log("success");
-      })
-      .catch((err) => console.log(err));
+      .then(() => { })
+      .catch((err) => {});
   };
   return (
     <>
@@ -29,7 +28,9 @@ const Main = () => {
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 bg-slate-200 text-base-content">
-            <h1 className="text-4xl mb-8 text-center">Logo</h1>
+            <div className="text-4xl mb-8 mx-auto">
+              <img className="w-28" src={logo} alt="" />
+            </div>
             <li>
               <Link to='/'>
                 <HiViewGrid /> Home
