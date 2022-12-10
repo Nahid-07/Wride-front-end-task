@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../Home/Home";
 import Main from "../Layout/Main";
 import Login from "../Login/Login";
+import Profile from "../profile/Profile";
 import Signup from "../Signup/Signup";
 import PrivetRouter from "./PrivetRouter";
 
@@ -18,6 +19,9 @@ export const router = createBrowserRouter([
           </PrivetRouter>
         ),
       },
+      {
+        path : '/profile', element:<Profile></Profile>
+      }
     ],
   },
 

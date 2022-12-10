@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaTwitter } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
+import { BiLock } from "react-icons/bi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import girl from "../images/Screenshot (97).png";
 import { HiOutlineUser } from "react-icons/hi";
@@ -8,7 +10,7 @@ import { AuthContext } from "../Context/Context";
 
 const Signup = () => {
   //   const navigate = useNavigate("/");
-  const { signUp, user } = useContext(AuthContext);
+  const { signUp, user,profile } = useContext(AuthContext);
   let navigate = useNavigate();
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";
@@ -28,7 +30,7 @@ const Signup = () => {
       .then((result) => {
         const user = result.user;
         navigate(from, { replace: true });
-        console.log(user);
+        profile(userName)
         navigate("/");
       })
       .catch((err) => console.log(err));
@@ -62,7 +64,7 @@ const Signup = () => {
             <div className="relative mt-4">
               <label className="block mb-2">Email</label>
               <span className="absolute left-2 top-[44px] text-2xl">
-                <HiOutlineUser />
+                <HiOutlineMail />
               </span>
               <input
                 type="email"
@@ -74,7 +76,7 @@ const Signup = () => {
             <div className="relative mt-4">
               <label className="block mb-2">Password</label>
               <span className="absolute left-2 top-[44px] text-2xl">
-                <HiOutlineUser />
+              <BiLock />
               </span>
               <input
                 type="password"

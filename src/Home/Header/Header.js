@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { HiChevronDown, HiSearch } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/Context";
 
 const Header = () => {
+  const {user} = useContext(AuthContext)
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -91,17 +94,17 @@ const Header = () => {
                 />
               </div>
             </div>
-            <Link className="ml-4">
-              Nahidul Islam Asif
+            <Link to='/profile' className="ml-4">
+              {user?.displayName}
               <HiChevronDown className="text-2xl inline" />
             </Link>
           </div>
         </ul>
       </div>
       <div className="navbar-end">
-        <a href="/" className="btn btn-sm">
+        <button className="btn btn-sm">
           Upload content
-        </a>
+        </button>
       </div>
     </div>
   );

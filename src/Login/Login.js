@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { HiOutlineUser } from "react-icons/hi";
+import { BiLock } from "react-icons/bi";
 import girl from "../images/Screenshot (97).png";
 import { FcGoogle } from "react-icons/fc";
 import { FaTwitter } from "react-icons/fa";
@@ -53,7 +54,7 @@ const Login = () => {
             <div className="relative mt-4">
               <label className="block mb-2">Email</label>
               <span className="absolute left-2 top-[44px] text-2xl">
-                <HiOutlineUser />
+                <BiLock />
               </span>
               <input
                 type="password"

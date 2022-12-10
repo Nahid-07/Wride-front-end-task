@@ -12,7 +12,7 @@ const RecommendedArticles = () => {
   return (
     <section className="my-16">
       <div className="flex justify-between mx-5 mb-3">
-        <h4 className="text-2xl font-bold">Recommended for you</h4>
+        <h4 className=" text-xl md:text-2xl font-bold">Recommended for you</h4>
         <div className="flex justify-between">
           <h4 className="text-gray-400">
             <FaArrowLeft className="inline " /> <span>prev</span>

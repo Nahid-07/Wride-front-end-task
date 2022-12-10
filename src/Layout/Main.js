@@ -28,16 +28,17 @@ const Main = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 bg-orange-200 text-base-content">
+          <ul className="menu p-4 w-80 bg-slate-200 text-base-content">
             <h1 className="text-4xl mb-8 text-center">Logo</h1>
             <li>
-              <Link>
+              <Link to='/'>
                 <HiViewGrid /> Home
               </Link>
             </li>
             <li>
               <Link>
                 <HiOutlineBell /> Notification
+                <div className="badge badge-secondary">+99</div>
               </Link>
             </li>
             <li>
@@ -46,7 +47,7 @@ const Main = () => {
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to='/profile'>
                 <HiOutlineUser /> Profile
               </Link>
             </li>

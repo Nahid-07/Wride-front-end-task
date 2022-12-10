@@ -9,7 +9,7 @@ const Shorts = () => {
         .then(data => setShorts(data))
     },[])
     return (
-        <div className={`flex p-6 mx-5 gap-8 border mb-16 mt-5`}>
+        <div className={`flex p-6 mx-5 gap-8 md:border mb-16 mt-5`}>
             {
                 shorts.map((short,i) => <Short key={i} short={short}></Short> )
             }

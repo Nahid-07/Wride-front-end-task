@@ -6,7 +6,7 @@ import LatestArticle from "./LatestArticle";
 const LatestArticles = () => {
   const [topArticles, setTopArticles] = useState([]);
   useEffect(() => {
-    fetch("recomnded.json")
+    fetch("latestArticles.json")
       .then((res) => res.json())
       .then((data) => setTopArticles(data));
   }, []);
