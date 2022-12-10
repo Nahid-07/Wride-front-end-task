@@ -5,14 +5,14 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.apiKey,
-  authDomain: process.env.authDomain,
-  projectId: process.env.projectId,
-  storageBucket: process.env.storageBucke,
-  messagingSenderId: process.env.messagingSenderId,
-  appId: process.env.appId
+  apiKey: "AIzaSyB-edjNS6L72gNxcaZpvhwRIh-rdNqqWAE",
+  authDomain: "wellfound-client-auth.firebaseapp.com",
+  projectId: "wellfound-client-auth",
+  storageBucket: "wellfound-client-auth.appspot.com",
+  messagingSenderId: "832895953210",
+  appId: "1:832895953210:web:6661617f98633b157f0803"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export default app;
+export default app

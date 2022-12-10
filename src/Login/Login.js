@@ -1,39 +1,30 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import { HiOutlineUser } from "react-icons/hi";
+import girl from "../images/Screenshot (97).png";
 import { FcGoogle } from "react-icons/fc";
 import { FaTwitter } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import girl from "../images/Screenshot (97).png";
-import { HiOutlineUser } from "react-icons/hi";
 import { AuthContext } from "../Context/Context";
 
-const Signup = () => {
-  //   const navigate = useNavigate("/");
-  const { signUp, user } = useContext(AuthContext);
+const Login = () => {
+  const [error, setError] = useState("");
+  const { login } = useContext(AuthContext);
   let navigate = useNavigate();
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";
-  if (user) {
-    navigate("/");
-  } else {
-    navigate("/login");
-  }
-  const hanldeSignUp = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
-    const userName = form.userName.value;
     const email = form.email.value;
     const password = form.password.value;
-
-    signUp(email, password)
+    login(email, password)
       .then((result) => {
         const user = result.user;
         navigate(from, { replace: true });
-        console.log(user);
-        navigate("/");
       })
-      .catch((err) => console.log(err));
-
-    console.log(userName, email, password);
+      .catch((err) => setError(err.message));
+    // console.log(email,password);
+    setError("");
   };
   return (
     <section className="bg-orange-200 h-screen flex items-center">
@@ -42,25 +33,13 @@ const Signup = () => {
           <img src={girl} className="w-full" alt="" />
         </div>
         <div className="md:w-1/2 px-3 md:px-0 flex justify-center">
-          <form onSubmit={hanldeSignUp} className="w-96">
+          <form onSubmit={handleLogin} className="w-96">
             <div>
               <h1 className="text-center text-3xl font-semibold mb-5">LOGO</h1>
               <h3 className="text-2xl font-semibold mb-4">Welcome back</h3>
             </div>
             <div className="relative">
-              <label className="block mb-2">Full Name</label>
-              <span className="absolute left-2 top-[44px] text-2xl">
-                <HiOutlineUser />
-              </span>
-              <input
-                type="text"
-                name="userName"
-                className="w-full pl-8 py-3 "
-                placeholder="Your full name"
-              />
-            </div>
-            <div className="relative mt-4">
-              <label className="block mb-2">Email</label>
+              <label className="block mb-2">User name or email</label>
               <span className="absolute left-2 top-[44px] text-2xl">
                 <HiOutlineUser />
               </span>
@@ -68,11 +47,11 @@ const Signup = () => {
                 type="email"
                 name="email"
                 className="w-full pl-8 py-3 "
-                placeholder="Your email"
+                placeholder="Email"
               />
             </div>
             <div className="relative mt-4">
-              <label className="block mb-2">Password</label>
+              <label className="block mb-2">Email</label>
               <span className="absolute left-2 top-[44px] text-2xl">
                 <HiOutlineUser />
               </span>
@@ -82,9 +61,11 @@ const Signup = () => {
                 className="w-full pl-8 py-3 "
                 placeholder="Password"
               />
+              <label className="block">Forget password ?</label>
+              <p className="text-red-600">{error}</p>
             </div>
             <div className=" flex justify-center w-full mt-5">
-              <button className="btn w-2/5">Sign up</button>
+              <button className="btn w-2/5">Login</button>
             </div>
             <div className="divider">OR</div>
             <div className=" flex justify-center gap-5">
@@ -97,7 +78,7 @@ const Signup = () => {
             </div>
             <div>
               <p className="mt-2 text-center font-medium">
-                Already have an account ? <Link to="/">Log in</Link>
+                New to this site ? <Link to="/signup">Sign up</Link>
               </p>
             </div>
           </form>
@@ -107,4 +88,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

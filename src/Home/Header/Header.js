@@ -1,4 +1,3 @@
-import React from "react";
 import { HiChevronDown, HiSearch } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
@@ -27,8 +26,6 @@ const Header = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-screen"
           >
-            {/* something */}
-
             <div className="flex flex-col justify-center items-center">
               <div className="form-control">
                 <label className="input-group input-group-sm">
@@ -70,7 +67,6 @@ const Header = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
-          {/* something */}
           <div className="flex items-center">
             <div className="form-control">
               <label className="input-group input-group-sm">
